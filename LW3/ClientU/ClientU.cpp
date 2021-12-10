@@ -34,8 +34,8 @@ int main()
         clock_t start, end;
         start = clock();
         while (i <= ITERATION_COUNT) {
-            char obuf[50] = "Hello from client ";
-            strcat_s(obuf, std::to_string(i++).c_str());
+            char obuf[50] = "Hello";
+            //strcat_s(obuf, std::to_string(i++).c_str());
             if (lobuf = sendto(clientSocket, obuf, strlen(obuf) + 1, NULL, (sockaddr*)&serv, sizeof(serv)) == SOCKET_ERROR) {
                 throw SetErrorMsgText("send: ", WSAGetLastError());
             }
